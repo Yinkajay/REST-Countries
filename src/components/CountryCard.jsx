@@ -3,8 +3,8 @@ import React from 'react'
 const CountryCard = ({ flag, countryName, population, region, capital }) => {
     return (
         <div className=' mb-8 rounded-md w-72 border-2 border-red-500 lg:w-80'>
-            <img src={flag} alt={`${countryName}'s flag`} />
-            <div className="">
+            <img src={flag} alt={`${countryName}'s flag`} className='' />
+            <div className="p-4">
                 <h2 className='my-4 text-xl font-bold'>{countryName}</h2>
 
                 <div className="">

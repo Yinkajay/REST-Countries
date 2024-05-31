@@ -5,6 +5,11 @@ import RegionFilter from './components/Regionfilter'
 import Searchbar from './components/Searchbar'
 import { useState } from 'react'
 import CountryCard from './components/CountryCard'
+import { createBrowserRouter } from 'react-router-dom'
+
+createBrowserRouter([
+  {path: '/', name: 'Home', component: },
+])
 
 function App() {
   const [countries, setCountries] = useState(null)
@@ -25,19 +30,17 @@ function App() {
         <Searchbar />
         <RegionFilter />
       </div>
-      <div className="px-24 py-12">
+      <div className="px-24 py-12 grid grid-cols-4">
         {countries
           ? (
-            countries.slice(0, 5).map((country, index) => (
+            countries.slice(0, 8).map((country, index) => (
               <CountryCard key={index} flag={country.flags.svg} countryName={country.name.official} population={country.population} region={country.region} capital={country.capital} />
             ))
           )
           : (
             <h1 className="">Loading...</h1>
           )}
-
       </div>
-
     </>
   )
 }
